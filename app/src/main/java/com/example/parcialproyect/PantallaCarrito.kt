@@ -11,23 +11,41 @@ import androidx.navigation.NavController
 
 @Composable
 fun PantallaCarrito(navController: NavController, viewModel: BiteBoxViewModel) {
+    val carritoAgrupado = viewModel.carrito.groupBy { it }
+
     Scaffold { padding ->
         Column(modifier = Modifier.padding(padding).padding(16.dp)) {
             Text("Tu Pedido", style = MaterialTheme.typography.headlineMedium)
 
+            Spacer(modifier = Modifier.height(16.dp))
+
             LazyColumn(modifier = Modifier.weight(1f)) {
-                items(viewModel.carrito) { platillo ->//lista de platillos desde detalles
-                    Text("${platillo.nombre} - $${platillo.precio}")
+                items(carritoAgrupado.toList()) { (platillo, listaRepetidos) ->
+                    val cantidad = listaRepetidos.size
+                    val subtotal = platillo.precio * cantidad
+
+                    Text(
+                        text = "${cantidad}x ${platillo.nombre} - $$subtotal",
+                        style = MaterialTheme.typography.bodyLarge,
+                        modifier = Modifier.padding(vertical = 4.dp)
+                    )
                 }
             }
 
-            Text("Total: $${viewModel.calcularTotal()}", style = MaterialTheme.typography.headlineSmall)
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = "Total: $${viewModel.calcularTotal()}",
+                style = MaterialTheme.typography.headlineSmall
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             Button(
                 modifier = Modifier.fillMaxWidth(),
                 onClick = {
                     viewModel.vaciarCarrito()
-                    navController.navigate("login") // Volver al inicio tras confirmar
+                    navController.navigate("login")
                 }
             ) {
                 Text("Confirmar Pedido")

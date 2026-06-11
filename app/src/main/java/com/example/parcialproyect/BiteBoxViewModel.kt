@@ -9,51 +9,36 @@ class BiteBoxViewModel : ViewModel() {
     val catalogo = listOf(
         Platillo(
             id = 1,
-            nombre = "Pizza Margarita",
-            descripcion = "Clásica con tomate y albahaca",
-            precio = 12.50,
-            categoria = "Pizzas",
-            urlImagen = "https://ejemplo.com/pizza1.jpg"
-        ),
-        Platillo(
-            id = 2,
-            nombre = "Pizza Pepperoni",
-            descripcion = "Con rodajas de pepperoni",
-            precio = 14.00,
-            categoria = "Pizzas",
-            urlImagen = "https://ejemplo.com/pizza2.jpg"
-        ),
-        Platillo(
-            id = 3,
-            nombre = "Pizza Hawaiana",
+            nombre = "Pizza Hawaiiana",
             descripcion = "Jamón y piña",
             precio = 13.50,
             categoria = "Pizzas",
-            urlImagen = "https://ejemplo.com/pizza3.jpg"
+            urlImagen = "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500&auto=format&fit=crop"
         ),
         Platillo(
-            id = 4,
-            nombre = "Hamburguesa Clásica",
-            descripcion = "Carne, queso y lechuga",
-            precio = 8.50,
-            categoria = "Hamburguesas",
-            urlImagen = "https://ejemplo.com/hamb1.jpg"
-        ),
-        Platillo(
-            id = 5,
-            nombre = "Hamburguesa Doble",
-            descripcion = "Doble carne y cheddar",
-            precio = 10.50,
-            categoria = "Hamburguesas",
-            urlImagen = "https://ejemplo.com/hamb2.jpg"
-        ),
-        Platillo(
-            id = 6,
+            id = 2,
             nombre = "Hamburguesa BBQ",
             descripcion = "Con salsa BBQ y cebolla",
             precio = 9.50,
             categoria = "Hamburguesas",
-            urlImagen = "https://ejemplo.com/hamb3.jpg")
+            urlImagen = "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500&auto=format&fit=crop"
+        ),
+        Platillo(
+            id = 3,
+            nombre = "Hamburguesa Clásica",
+            descripcion = "Carne, queso y lechuga",
+            precio = 8.50,
+            categoria = "Hamburguesas",
+            urlImagen = "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=500&auto=format&fit=crop"
+        ),
+        Platillo(
+            id = 4,
+            nombre = "Hamburguesa Doble",
+            descripcion = "Doble carne y cheddar",
+            precio = 10.50,
+            categoria = "Hamburguesas",
+            urlImagen = "https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=500&auto=format&fit=crop"
+        )
     )
 
     // Lista reactiva para el carrito
